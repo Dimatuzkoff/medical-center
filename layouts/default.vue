@@ -3,7 +3,7 @@ import NavBar from "@/components/NavBar.vue";
 </script>
 
 <template>
-  <div class="">
+  <div class="main-wrapper">
     <Header />
     <div class="wrapper">
       <NavBar />
@@ -14,6 +14,9 @@ import NavBar from "@/components/NavBar.vue";
 
 
 <style scoped>
+.main-wrapper {
+  font-family: "Open Sans";
+}
 .wrapper {
   display: flex;
   flex-direction: row;

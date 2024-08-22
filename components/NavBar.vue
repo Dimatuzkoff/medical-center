@@ -27,11 +27,11 @@ const setActive = (title) => {
         <Nuxt-Link :to="link.url" class="icon-link">
           <Icon
             :icon="link.icon"
-            size="30px"
-            :color="link.title == activeLink ? 'green' : 'grey'"
+            size="20px"
+            :color="link.title == activeLink ? '#4BAD3B' : 'grey'"
           />
           <span
-            :style="{ color: link.title === activeLink ? 'green' : 'grey' }"
+            :style="{ color: link.title === activeLink ? '#4BAD3B' : 'grey' }"
             >{{ link.title }}</span
           >
         </Nuxt-Link>
@@ -42,20 +42,28 @@ const setActive = (title) => {
 
 <style scoped>
 nav {
-  width: fit-content;
-  padding: 2rem;
+  width: 295px;
+  height: 683px;
+  padding: 30px;
+}
+
+ul {
+  padding: 0;
 }
 
 li {
   display: flex;
   flex-direction: row;
+  height: 22px;
+  margin-bottom: 20px;
 }
 
 li a {
-  /* color: green */
   display: flex;
-
   text-decoration: none;
-  padding: 0.5rem;
+}
+
+li span {
+  margin-left: 15px;
 }
 </style>

@@ -4,7 +4,7 @@ import apiService from '@/services/api';
 export const useAppStore = defineStore('app', {
     state: () => ({
         clients: [],
-        test: 'wewr'
+        userName: 'Адмін',
     }),
     actions: {
         async getClients() {
