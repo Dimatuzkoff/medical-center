@@ -2,14 +2,14 @@
 </script>
 
 <template>
-  <head>
+  <div class="header">
     <div class="logo">Name</div>
     <div class="user">Data</div>
-  </head>
+  </div>
 </template>
 
 <style  scoped>
-head {
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

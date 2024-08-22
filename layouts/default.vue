@@ -1,22 +1,20 @@
 <script setup>
-import NavBar from "./NavBar.vue";
+import NavBar from "@/components/NavBar.vue";
 </script>
 
 <template>
   <div class="">
     <Header />
-    <div class="main-wrapper">
+    <div class="wrapper">
       <NavBar />
       <slot></slot>
     </div>
-
-    <p>низ</p>
   </div>
-</template>
+</template> 
 
 
 <style scoped>
-.main-wrapper {
+.wrapper {
   display: flex;
   flex-direction: row;
 }
