@@ -9,6 +9,12 @@ export const useAppStore = defineStore('app', {
     actions: {
         async getClients() {
             this.clients = await apiService.getClients()
+        },
+        deleteClient(clientName) {
+            const clientIdx = this.clients.findIndex((elem) => elem.name === clientName);
+            if (clientIdx !== -1) {
+                this.clients.splice(clientIdx, 1);
+            }
         }
     },
 });

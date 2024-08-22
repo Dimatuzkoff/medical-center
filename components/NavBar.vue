@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-import Icon from "./Icon.vue";
 const links = ref([
   { title: "Сканер", url: "/scaner", icon: "scaner" },
   { title: "Співробітники", url: "/employees", icon: "employees" },
@@ -42,7 +41,7 @@ const setActive = (title) => {
 
 <style scoped>
 nav {
-  width: 295px;
+  display: none;
   height: 683px;
   padding: 30px;
 }
@@ -65,5 +64,11 @@ li a {
 
 li span {
   margin-left: 15px;
+}
+
+@media (min-width: 768px) {
+  nav {
+    display: block;
+  }
 }
 </style>

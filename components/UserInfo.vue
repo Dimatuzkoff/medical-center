@@ -16,6 +16,7 @@ const appStore = useAppStore();
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: 14px;
 }
 .user-name {
   font-weight: bold;

@@ -1,7 +1,3 @@
-<script setup>
-import UserInfo from "./UserInfo.vue";
-</script>
-
 <template>
   <div class="header">
     <div class="logo">
@@ -22,6 +18,15 @@ import UserInfo from "./UserInfo.vue";
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 15px;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo a {
+  height: 28px;
 }
 
 .logo img {
