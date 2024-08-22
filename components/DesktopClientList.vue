@@ -49,28 +49,26 @@ const appStore = useAppStore();
 .table-wrapper-desktop th {
   font-weight: normal;
   text-align: left;
-  color: #9c9f9b;
+  color: var(--text-grey);
 }
 .table-wrapper-desktop .td-name {
-  border-top: 1px solid #d9d9d9;
-  border-left: 1px solid #d9d9d9;
-  border-bottom: 1px solid #d9d9d9;
+  border-left: 1px solid var(--border);
   border-radius: 10px 0 0 10px;
 }
 
+.table-wrapper-desktop .td-lastUpdated,
+.table-wrapper-desktop .td-name,
 .table-wrapper-desktop .td-category,
 .table-wrapper-desktop .td-phone {
-  border-top: 1px solid #d9d9d9;
-  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .table-wrapper-desktop .td-lastUpdated {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  border-top: 1px solid #d9d9d9;
-  border-right: 1px solid #d9d9d9;
-  border-bottom: 1px solid #d9d9d9;
+  border-right: 1px solid var(--border);
   border-radius: 0 10px 10px 0;
 }
 

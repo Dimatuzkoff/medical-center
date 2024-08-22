@@ -25,6 +25,7 @@ const appStore = useAppStore();
 .wrapper-panel {
   display: flex;
   height: 45px;
+  margin-bottom: 20px;
 }
 
 .wrapper-panel .amount {
@@ -38,7 +39,7 @@ const appStore = useAppStore();
   font-size: 20px;
 }
 .wrapper-panel .amount div {
-  color: #9c9f9b;
+  color: var(--text-grey);
 }
 
 .wrapper-panel .add-btn {
@@ -50,8 +51,8 @@ const appStore = useAppStore();
   font-size: 16px;
   background-color: transparent;
   border-radius: 50px;
-  border: 1px solid #4bad3b;
-  color: #4bad3b;
+  border: 1px solid var(--active);
+  color: var(--active);
   cursor: pointer;
 }
 

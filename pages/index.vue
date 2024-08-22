@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  <h1>ejrbfehwjmo</h1>
+  <h1>Home page</h1>
 </template>

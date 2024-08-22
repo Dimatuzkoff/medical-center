@@ -23,6 +23,7 @@ onMounted(() => {
 <style>
 .wrapper-client {
   width: 100%;
+  margin-left: 20px;
 }
 
 .wrapper-client .wrapper-desktop {
@@ -36,6 +37,7 @@ onMounted(() => {
   .wrapper-client .wrapper-desktop {
     display: block;
     padding: 30px;
+    background-color: var(--white);
   }
 }
 </style>

@@ -18,6 +18,8 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 15px;
+  background-color: var(--white);
+  margin-bottom: 30px;
 }
 
 .header .logo {
