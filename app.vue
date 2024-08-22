@@ -12,7 +12,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div>
-    {{ appStore.clients }}
-  </div>
-</template>
+  <AppLayout>
+    <NuxtPage />
+  </AppLayout>
+</template> 
