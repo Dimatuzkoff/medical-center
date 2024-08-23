@@ -53,17 +53,22 @@ const setHover = (name) => {
         </Nuxt-Link>
       </li>
       <li @mouseover="setHover('log-out')" @mouseleave="setHover(null)">
-        <Icon
-          icon="log-out"
-          size="20px"
-          :color="onHover === 'log-out' ? 'var( --danger)' : 'var(--text-grey)'"
-        />
-        <span
-          :style="{
-            color: onHover === 'log-out' ? 'var(--danger)' : 'var(--text-grey)',
-          }"
-          >Вийти</span
-        >
+        <a href="#">
+          <Icon
+            icon="log-out"
+            size="20px"
+            :color="
+              onHover === 'log-out' ? 'var( --danger)' : 'var(--text-grey)'
+            "
+          />
+          <span
+            :style="{
+              color:
+                onHover === 'log-out' ? 'var(--danger)' : 'var(--text-grey)',
+            }"
+            >Вийти</span
+          >
+        </a>
       </li>
     </ul>
   </nav>
@@ -167,9 +172,6 @@ nav ul li:last-child {
     width: 100%;
     font-size: 13px;
     text-align: center;
-  }
-  nav ul li:last-child span {
-    margin-bottom: 7px;
   }
 
   nav ul li:last-child {
