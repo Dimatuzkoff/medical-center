@@ -22,7 +22,6 @@ const appStore = useAppStore();
     </div>
     <div class="select-add-client">
       <div class="select">
-        <div class="arrow">↓</div>
         <select v-model="appStore.currentCategory">
           <option value="" disabled selected hidden>Виберіть зі списку</option>
           <option value="">Всі категорії</option>
@@ -111,13 +110,6 @@ const appStore = useAppStore();
   background-color: var(--white);
   padding: 11px;
   height: 45px;
-  position: relative;
-}
-
-.wrapper-panel .select .arrow {
-  position: absolute;
-  top: 13px;
-  right: 35px;
 }
 
 .wrapper-panel .select select {
@@ -125,8 +117,6 @@ const appStore = useAppStore();
   height: 100%;
   border: none;
   font-size: 16px;
-  -webkit-appearance: none;
-  appearance: none;
 }
 
 .wrapper-panel .select select:focus {
