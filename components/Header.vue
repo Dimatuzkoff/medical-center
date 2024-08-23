@@ -1,7 +1,12 @@
+<script setup>
+import { inject } from "vue";
+
+const resetActiveTab = inject("resetActiveTab");
+</script>
 <template>
   <div class="header">
     <div class="logo">
-      <NuxtLink to="/">
+      <NuxtLink to="/" @click="resetActiveTab">
         <img src="/img/logo.svg" alt="logo" />
       </NuxtLink>
     </div>

@@ -1,5 +1,12 @@
 <script setup>
-import NavBar from "@/components/NavBar.vue";
+import { ref, provide } from "vue";
+
+const activeLink = ref("");
+
+provide("activeLink", activeLink);
+provide("resetActiveTab", () => {
+  activeLink.value = "";
+});
 </script>
 
 <template>

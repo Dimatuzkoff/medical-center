@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { inject } from "vue";
 const links = ref([
   { title: "Сканер", url: "/scaner", icon: "scaner" },
   { title: "Співробітники", url: "/employees", icon: "employees" },
@@ -8,7 +9,7 @@ const links = ref([
   { title: "Банери", url: "/baners", icon: "baners" },
 ]);
 
-const activeLink = ref("");
+const activeLink = inject("activeLink");
 const onHover = ref(null);
 
 const setActive = (title) => {
