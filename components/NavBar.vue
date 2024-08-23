@@ -116,6 +116,10 @@ nav ul li:last-child {
   position: absolute;
   bottom: 0;
 }
+nav ul li svg {
+  height: 24px;
+  width: 24px;
+}
 
 @media (max-width: 768px) {
   nav {
