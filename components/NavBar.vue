@@ -68,7 +68,6 @@ const setHover = (name) => {
 nav {
   display: block;
   height: 683px;
-  width: 295px;
   padding: 30px;
   background-color: var(--white);
   position: relative;
@@ -171,6 +170,12 @@ nav ul li:last-child {
   nav ul li:last-child {
     position: static;
     bottom: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  nav {
+    min-width: 295px;
   }
 }
 </style>

@@ -40,8 +40,13 @@ onMounted(() => {
   }
   .wrapper-client .wrapper-desktop {
     display: block;
-    padding: 30px;
+    padding: 5px;
     background-color: var(--white);
+  }
+}
+@media (min-width: 1000px) {
+  .wrapper-client .wrapper-desktop {
+    padding: 30px;
   }
 }
 </style>
