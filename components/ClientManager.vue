@@ -7,8 +7,8 @@ const appStore = useAppStore();
   <div class="wrapper-panel">
     <div class="amount">
       <span class="text">KЛІЄНТИ</span>
-      <div class="">
-        <span>{{ appStore.clients.length }}</span>
+      <div>
+        <span>{{ appStore.filteredClients.length }}</span>
         <span> чоловік</span>
       </div>
     </div>
