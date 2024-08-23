@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia';
 import apiService from '@/services/api';
 import { ref } from "vue";
+import { randomClients } from "../data/randomClients";
+
 
 export const useAppStore = defineStore('app', {
     state: () => ({
@@ -18,6 +20,12 @@ export const useAppStore = defineStore('app', {
             if (clientIdx !== -1) {
                 this.clients.splice(clientIdx, 1);
             }
+        },
+        addRandomClients() {
+            const clientIndex = Math.floor(Math.random() * randomClients.length);
+            const newClient = randomClients[clientIndex];
+            this.clients.unshift(newClient);
+
         }
     },
 

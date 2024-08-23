@@ -27,7 +27,7 @@ const appStore = useAppStore();
       </select>
     </div>
     <div class="add-client">
-      <button class="add-btn">
+      <button class="add-btn" @click="appStore.addRandomClients">
         <span>Додати</span>
         <div class="icon-add"></div>
       </button>
