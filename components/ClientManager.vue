@@ -65,7 +65,7 @@ const appStore = useAppStore();
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 360px;
+  width: 300px;
   height: 45px;
 }
 
@@ -80,7 +80,7 @@ const appStore = useAppStore();
 .wrapper-panel .search {
   display: flex;
   flex-direction: row;
-  width: 360px;
+  width: 300px;
   padding: 11px;
   background-color: var(--white);
   height: 45px;
@@ -106,7 +106,7 @@ const appStore = useAppStore();
 }
 
 .wrapper-panel .select {
-  width: 360px;
+  width: 300px;
   background-color: var(--white);
   padding: 11px;
   height: 45px;
@@ -127,7 +127,7 @@ const appStore = useAppStore();
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 360px;
+  width: 300px;
   height: 45px;
   font-size: 16px;
   background-color: transparent;
@@ -158,6 +158,15 @@ const appStore = useAppStore();
 
 .wrapper-panel .add-btn:hover .icon-add {
   background-image: url("/img/icons/add-white.svg");
+}
+
+@media (min-width: 375px) {
+  .wrapper-panel .amount,
+  .wrapper-panel .search,
+  .wrapper-panel .select,
+  .wrapper-panel .add-btn {
+    width: 360px;
+  }
 }
 
 @media (min-width: 768px) {
