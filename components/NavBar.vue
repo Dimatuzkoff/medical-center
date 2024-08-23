@@ -27,19 +27,23 @@ const setHover = (name) => {
         v-for="link in links"
         :key="link.title"
         @click="setActive(link.title)"
+        @mouseover="setHover(link.title)"
+        @mouseleave="setHover(null)"
       >
         <Nuxt-Link :to="link.url" class="icon-link">
           <Icon
             :icon="link.icon"
             size="20px"
             :color="
-              link.title == activeLink ? 'var(--active)' : 'var(--text-grey)'
+              link.title === activeLink || link.title === onHover
+                ? 'var(--active)'
+                : 'var(--text-grey)'
             "
           />
           <span
             :style="{
               color:
-                link.title === activeLink
+                link.title === activeLink || link.title === onHover
                   ? 'var(--active)'
                   : 'var(--text-grey)',
             }"
@@ -51,11 +55,11 @@ const setHover = (name) => {
         <Icon
           icon="log-out"
           size="20px"
-          :color="onHover == 'log-out' ? 'var( --danger)' : 'var(--text-grey)'"
+          :color="onHover === 'log-out' ? 'var( --danger)' : 'var(--text-grey)'"
         />
         <span
           :style="{
-            color: onHover == 'log-out' ? 'var(--danger)' : 'var(--text-grey)',
+            color: onHover === 'log-out' ? 'var(--danger)' : 'var(--text-grey)',
           }"
           >Вийти</span
         >
