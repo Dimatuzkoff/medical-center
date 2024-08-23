@@ -1,12 +1,13 @@
 import { defineStore } from 'pinia';
 import apiService from '@/services/api';
-import { computed, ref } from "vue";
+import { ref } from "vue";
 
 export const useAppStore = defineStore('app', {
     state: () => ({
         clients: [],
         userName: 'Адмін',
-        query: ref("")
+        query: ref(""),
+        currentCategory: ref("")
     }),
     actions: {
         async getClients() {
@@ -22,9 +23,11 @@ export const useAppStore = defineStore('app', {
 
     getters: {
         filteredClients() {
-            return this.clients.filter(client =>
-                client.name.toLowerCase().includes(this.query.toLowerCase())
-            );
+            return this.clients.filter(client => {
+                const clientName = client.name.toLowerCase().includes(this.query.toLowerCase());
+                const clientCategory = this.currentCategory ? client.category === this.currentCategory : true;
+                return clientName && clientCategory;
+            });
         },
     },
 });

@@ -23,11 +23,6 @@ onMounted(() => {
 <style>
 .wrapper-client {
   width: 100%;
-  margin-left: 20px;
-}
-
-.wrapper-client .wrapper-mobile {
-  padding: 15px;
 }
 
 .wrapper-client .wrapper-desktop {
@@ -35,6 +30,9 @@ onMounted(() => {
 }
 
 @media (min-width: 768px) {
+  .wrapper-client {
+    margin-left: 20px;
+  }
   .wrapper-client .wrapper-mobile {
     display: none;
   }

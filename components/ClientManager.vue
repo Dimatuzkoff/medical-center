@@ -6,17 +6,26 @@ const appStore = useAppStore();
 <template>
   <div class="wrapper-panel">
     <div class="amount">
-      <span class="text">KЛІЄНТИ</span>
-      <div>
-        <span>{{ appStore.filteredClients.length }}</span>
-        <span> чоловік</span>
+      <div class="wrapper-amount">
+        <span class="text">KЛІЄНТИ</span>
+        <div>
+          <span>{{ appStore.filteredClients.length }}</span>
+          <span> чоловік</span>
+        </div>
       </div>
     </div>
     <div class="search">
       <img src="/img/icons/search.svg" alt="search" />
       <input type="search" placeholder="Пошук" v-model="appStore.query" />
     </div>
-    <div class="select"></div>
+    <div class="select">
+      <select v-model="appStore.currentCategory">
+        <option value="" disabled selected hidden>Виберіть зі списку</option>
+        <option value="">Всі категорії</option>
+        <option value="категорія 1">Категорія 1</option>
+        <option value="категорія 2">Категорія 2</option>
+      </select>
+    </div>
     <div class="add-client">
       <button class="add-btn">
         <span>Додати</span>
@@ -28,30 +37,38 @@ const appStore = useAppStore();
 <style  scoped>
 .wrapper-panel {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  height: 45px;
+  align-items: center;
+  height: 240px;
   margin-bottom: 20px;
 }
 
-.wrapper-panel .amount {
+.wrapper-panel .amount .wrapper-amount {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.wrapper-panel .amount .text {
+.wrapper-panel .amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 360px;
+}
+
+.wrapper-panel .amount .wrapper-amount .text {
   font-weight: bold;
   font-size: 20px;
 }
-.wrapper-panel .amount div {
+.wrapper-panel .amount .wrapper-amount div {
   color: var(--text-grey);
 }
 
 .wrapper-panel .search {
   display: flex;
   flex-direction: row;
-  width: 229px;
+  width: 360px;
   padding: 11px;
   background-color: var(--white);
 }
@@ -75,11 +92,28 @@ const appStore = useAppStore();
   color: var(--text-grey);
 }
 
+.wrapper-panel .select {
+  width: 360px;
+  background-color: var(--white);
+  padding: 11px;
+}
+
+.wrapper-panel .select select {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 16px;
+}
+
+.wrapper-panel .select select:focus {
+  outline: none;
+}
+
 .wrapper-panel .add-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 220px;
+  width: 360px;
   height: 45px;
   font-size: 16px;
   background-color: transparent;
@@ -110,5 +144,27 @@ const appStore = useAppStore();
 
 .wrapper-panel .add-btn:hover .icon-add {
   background-image: url("/img/icons/add-white.svg");
+}
+
+@media (min-width: 768px) {
+  .wrapper-panel {
+    flex-direction: row;
+    height: 45px;
+  }
+
+  .wrapper-panel .amount {
+    width: 96px;
+  }
+
+  .wrapper-panel .search {
+    max-width: 229px;
+  }
+
+  .wrapper-panel .select {
+    max-width: 280px;
+  }
+  .wrapper-panel .add-btn {
+    width: 220px;
+  }
 }
 </style>
