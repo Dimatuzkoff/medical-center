@@ -26,6 +26,10 @@ onMounted(() => {
   margin-left: 20px;
 }
 
+.wrapper-client .wrapper-mobile {
+  padding: 15px;
+}
+
 .wrapper-client .wrapper-desktop {
   display: none;
 }

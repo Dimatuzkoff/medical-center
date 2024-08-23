@@ -16,7 +16,7 @@ const appStore = useAppStore();
     <div class="add-client">
       <button class="add-btn">
         <span>Додати</span>
-        <img src="/public/img/icons/add.svg" alt="add" />
+        <div class="icon-add"></div>
       </button>
     </div>
   </div>
@@ -24,6 +24,8 @@ const appStore = useAppStore();
 <style  scoped>
 .wrapper-panel {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   height: 45px;
   margin-bottom: 20px;
 }
@@ -58,5 +60,24 @@ const appStore = useAppStore();
 
 .wrapper-panel .add-btn img {
   margin-left: 10px;
+}
+
+.wrapper-panel .add-btn .icon-add {
+  margin-left: 10px;
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/icons/add.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.wrapper-panel .add-btn:hover {
+  background-color: var(--active);
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+.wrapper-panel .add-btn:hover .icon-add {
+  background-image: url("/img/icons/add-white.svg");
 }
 </style>
