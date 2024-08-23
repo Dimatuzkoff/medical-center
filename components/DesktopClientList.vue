@@ -13,7 +13,7 @@ const appStore = useAppStore();
       </tr>
     </thead>
     <tbody>
-      <tr v-for="client in appStore.clients" :key="client.name">
+      <tr v-for="client in appStore.filteredClients" :key="client.name">
         <td class="td-name">{{ client.name }}</td>
         <td class="td-category">{{ client.category }}</td>
         <td class="td-phone">{{ client.phone }}</td>

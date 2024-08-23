@@ -1,5 +1,6 @@
 <script setup>
 import { useAppStore } from "../stores/AppStore";
+import { ref, computed } from "vue";
 const appStore = useAppStore();
 </script>
 <template>
@@ -11,7 +12,10 @@ const appStore = useAppStore();
         <span> чоловік</span>
       </div>
     </div>
-    <div class="search"></div>
+    <div class="search">
+      <img src="/img/icons/search.svg" alt="search" />
+      <input type="search" placeholder="Пошук" v-model="appStore.query" />
+    </div>
     <div class="select"></div>
     <div class="add-client">
       <button class="add-btn">
@@ -41,6 +45,33 @@ const appStore = useAppStore();
   font-size: 20px;
 }
 .wrapper-panel .amount div {
+  color: var(--text-grey);
+}
+
+.wrapper-panel .search {
+  display: flex;
+  flex-direction: row;
+  width: 229px;
+  padding: 11px;
+  background-color: var(--white);
+}
+
+.wrapper-panel .search img {
+  margin-right: 11px;
+}
+
+.wrapper-panel .search input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 16px;
+}
+
+.wrapper-panel .search input:focus {
+  outline: none;
+}
+
+.wrapper-panel .search input::placeholder {
   color: var(--text-grey);
 }
 

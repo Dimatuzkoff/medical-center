@@ -5,7 +5,7 @@ const appStore = useAppStore();
 <template>
   <div
     class="wrapper-mobile-list"
-    v-for="client in appStore.clients"
+    v-for="client in appStore.filteredClients"
     :key="client.phone"
   >
     <div class="client-property border">
