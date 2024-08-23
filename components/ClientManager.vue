@@ -5,32 +5,36 @@ const appStore = useAppStore();
 </script>
 <template>
   <div class="wrapper-panel">
-    <div class="amount">
-      <div class="wrapper-amount">
-        <span class="text">KЛІЄНТИ</span>
-        <div>
-          <span>{{ appStore.filteredClients.length }}</span>
-          <span> чоловік</span>
+    <div class="amount-search">
+      <div class="amount">
+        <div class="wrapper-amount">
+          <span class="text">KЛІЄНТИ</span>
+          <div>
+            <span>{{ appStore.filteredClients.length }}</span>
+            <span> чоловік</span>
+          </div>
         </div>
       </div>
+      <div class="search">
+        <img src="/img/icons/search.svg" alt="search" />
+        <input type="search" placeholder="Пошук" v-model="appStore.query" />
+      </div>
     </div>
-    <div class="search">
-      <img src="/img/icons/search.svg" alt="search" />
-      <input type="search" placeholder="Пошук" v-model="appStore.query" />
-    </div>
-    <div class="select">
-      <select v-model="appStore.currentCategory">
-        <option value="" disabled selected hidden>Виберіть зі списку</option>
-        <option value="">Всі категорії</option>
-        <option value="категорія 1">Категорія 1</option>
-        <option value="категорія 2">Категорія 2</option>
-      </select>
-    </div>
-    <div class="add-client">
-      <button class="add-btn" @click="appStore.addRandomClients">
-        <span>Додати</span>
-        <div class="icon-add"></div>
-      </button>
+    <div class="select-add-client">
+      <div class="select">
+        <select v-model="appStore.currentCategory">
+          <option value="" disabled selected hidden>Виберіть зі списку</option>
+          <option value="">Всі категорії</option>
+          <option value="категорія 1">Категорія 1</option>
+          <option value="категорія 2">Категорія 2</option>
+        </select>
+      </div>
+      <div class="add-client">
+        <button class="add-btn" @click="appStore.addRandomClients">
+          <span>Додати</span>
+          <div class="icon-add"></div>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -40,10 +44,17 @@ const appStore = useAppStore();
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 240px;
+  height: 225px;
   margin-bottom: 20px;
 }
 
+.select-add-client,
+.amount-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 105px;
+}
 .wrapper-panel .amount .wrapper-amount {
   display: flex;
   flex-direction: column;
@@ -55,6 +66,7 @@ const appStore = useAppStore();
   flex-direction: column;
   align-items: flex-start;
   width: 360px;
+  height: 45px;
 }
 
 .wrapper-panel .amount .wrapper-amount .text {
@@ -71,6 +83,7 @@ const appStore = useAppStore();
   width: 360px;
   padding: 11px;
   background-color: var(--white);
+  height: 45px;
 }
 
 .wrapper-panel .search img {
@@ -96,6 +109,7 @@ const appStore = useAppStore();
   width: 360px;
   background-color: var(--white);
   padding: 11px;
+  height: 45px;
 }
 
 .wrapper-panel .select select {
@@ -149,7 +163,7 @@ const appStore = useAppStore();
 @media (min-width: 768px) {
   .wrapper-panel {
     flex-direction: row;
-    height: 45px;
+    height: 90px;
   }
 
   .wrapper-panel .amount {
@@ -157,14 +171,35 @@ const appStore = useAppStore();
   }
 
   .wrapper-panel .search {
-    max-width: 229px;
+    width: 229px;
   }
 
   .wrapper-panel .select {
-    max-width: 280px;
+    width: 280px;
   }
   .wrapper-panel .add-btn {
     width: 220px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper-panel {
+    flex-direction: row;
+    height: 45px;
+  }
+
+  .select-add-client,
+  .amount-search {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .amount-search {
+    width: 38%;
+  }
+
+  .select-add-client {
+    width: 60%;
   }
 }
 </style>
